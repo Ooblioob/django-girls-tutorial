@@ -9,6 +9,17 @@
         <link rel="stylesheet" href="{% static "css/blog.css" %}">
     </head>
     <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="">Django Girls Blog (now with 70% more cats)</a></h1>
+        </div>
+
+        <div>
+            <img src="http://thecatapi.com/api/images/get?format=src&type=png&size=small"></img>
+        </div>
+
         {% block content %}
         {% endblock %}
     </body>
